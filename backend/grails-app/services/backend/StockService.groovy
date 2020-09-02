@@ -16,10 +16,6 @@ class StockService {
 
         long start = System.currentTimeMillis();
 
-//        def stockCount = Stock.executeQuery("SELECT COUNT(*) FROM Stock s, Company c " +
-//               "WHERE s.comp = c.id " +
-//                "AND c.nome LIKE :empresa", [empresa:empresa])
-
         final Timestamp time = new Timestamp(System.currentTimeMillis() - java.time.Duration.ofHours(horas).toMillis())
 
         def stocks = Stock.executeQuery("SELECT s FROM Stock s, Company c " +
